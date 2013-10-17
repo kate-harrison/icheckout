@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-l
+
 
 # # # DESCRIPTION # # #
 # This script performs "intelligent checkout" of branches in git. When
@@ -26,9 +26,8 @@ l
 # [alias]
 #     icheckout = !./icheckout.py
 #
-# In my setup, icheckout.py is in the root folder of the repository. This alias
-# seems to work even after changing directories but I can't make any
-# guarantees. You may prefer to store the script in your /usr/local/bin folder.
+# In my setup, icheckout.py is in the root folder of the repository. You may
+# prefer to store the script in your /usr/local/bin folder.
 
 
 
@@ -37,9 +36,9 @@ import re
 import subprocess
 import time
 
-prefix = "AUTOSTASH"	# prefix to be used for the stash message (used to
-						# indicate that a stash was created by this script)
-
+# Prefix to be used for the stash message (used to indicate that a stash was
+# created by this script)
+prefix = "ICHECKOUT_AUTOSTASH"
 
 def getCurrentBranch():
 	"""Determines the current branch name using the 'git branch' command. Looks
